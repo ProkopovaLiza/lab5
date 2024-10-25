@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Онлайн-школа, русский язык">
+    <meta name="description" content="Сайт создан для обучения иноязычных людей русскому языку.">
+    <title>Матрёшка</title>
+    <link rel="icon" type="image/png" href="images/Group.png">
+</head>
+<body>
+
+    <!-- Шапка сайта -->
+    <header class="header">
+        <div class="logo">
+            <img src="images/logo.svg" alt="Логотип">
+        </div>
+        <h1>Матрёшка</h1>
+        <!-- Навигационное меню -->
+        <nav>
+            <ul>
+                <li><a href="index.html">О школе </a></li>
+                <li><a href="curs.html">Курсы</a></li>
+                <li><a href="forum.html">Форум</a></li>
+                <li><a href="#">Поддержка</a></li>
+            </ul>
+        </nav>
+    </header>
+<!-- Основной контент -->
+    <main>
+        <article>
+            <h2>Научим языку с любого уровня на нужный именно вам</h2>
+            <p>Вводный урок</p>
+            <figure>
+                <img class="img1" src="images/1.jpg" alt="Фотография 1">
+            </figure>
+        
+            <button class="button-cta" onclick="showRegistrationForm()">Записаться на курс</button>
+            <!-- Форма регистрации скрыта по умолчанию -->
+            <div class="registration-form" id="registrationForm" style="display: none;">
+                <h2>Форма регистрации</h2>
+                <form>
+                    <label for="name">Имя:</label><br>
+                    <input type="text" id="name" name="name"><br>
+                    <label for="email">Email:</label><br>
+                    <input type="email" id="email" name="email"><br>
+                    <input type="submit" value="Отправить">
+                </form>
+            </div>      
+            <!-- JavaScript для показа формы -->
+            <script>
+            function showRegistrationForm() {
+                document.getElementById("registrationForm").style.display = "block";
+            }
+            </script>
+          
+        </article>
+    </main>
+<!-- Подвал сайта -->
+    <footer>
+        <p> Матрешка     ©2024 Политика конфиденциальности.</p>
+    </footer>
+
+</body>
+</html>
