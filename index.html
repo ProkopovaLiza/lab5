@@ -7,6 +7,65 @@
     <meta name="description" content="Сайт создан для обучения иноязычных людей русскому языку.">
     <title>Матрёшка</title>
     <link rel="icon" type="image/png" href="images/Group.png">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+.registration-form {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    width: 300px; 
+    margin: 30px auto; 
+}
+
+.registration-form h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    margin-top: auto;
+    font-family: 'jetbrains-mono', sans-serif;
+}
+
+.registration-form label {
+    display: block;
+    font-family: 'jura', sans-serif;
+}
+
+.registration-form input[type="text"], 
+.registration-form input[type="email"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+.registration-form button[type="submit"] {
+    display: block;
+    background-color: #F8FB7E; 
+    color: #000;
+    border: none;
+    cursor: pointer;
+    font-family: 'jura', sans-serif;
+    margin: auto;
+    transition: all 0.2s ease; 
+}
+
+.registration-form button[type="submit"]:hover {
+  background-color: transparent;
+  border: 3px solid #F8FB7E;
+  box-shadow: 0px 0px 10px rgba(248, 251, 126, 0.5);
+}
+
+.registration-form button[type="submit"]:active { 
+  background-color: #4CAF50;
+  border: none; 
+  box-shadow: none; 
+}
+
+.form-field {
+    margin-bottom: 15px; 
+}
+    </style>
 </head>
 <body>
 
@@ -15,7 +74,6 @@
         <div class="logo">
             <img src="images/logo.svg" alt="Логотип">
         </div>
-        <h1>Матрёшка</h1>
         <!-- Навигационное меню -->
         <nav>
             <ul>
@@ -28,14 +86,15 @@
     </header>
 <!-- Основной контент -->
     <main>
-        <article>
-            <h2>Научим языку с любого уровня на нужный именно вам</h2>
-            <p>Вводный урок</p>
-            <figure>
+            <div class="osnova">
+            <div class="text1">
+                <h2 style="text-align: center;">Научим языку с любого </br> уровня на нужный </br> именно вам</h2>
+                <a style="text-decoration: none;" href="curs.html"><button style="font-size: 20px; margin: 50px auto;" type="button">Вводный урок</button></a>
+            </div>
                 <img class="img1" src="images/1.jpg" alt="Фотография 1">
-            </figure>
+            </div>
         
-            <button class="button-cta" onclick="showRegistrationForm()">Записаться на курс</button>
+            <button style="font-size: 32px; margin: 30px 30px 30px auto;" class="button-cta" onclick="showRegistrationForm()">Записаться на курс</button>
             <!-- Форма регистрации скрыта по умолчанию -->
             <div class="registration-form" id="registrationForm" style="display: none;">
                 <h2>Форма регистрации</h2>
@@ -44,7 +103,7 @@
                     <input type="text" id="name" name="name"><br>
                     <label for="email">Email:</label><br>
                     <input type="email" id="email" name="email"><br>
-                    <input type="submit" value="Отправить">
+                    <button type="submit">Отправить</button>
                 </form>
             </div>      
             <!-- JavaScript для показа формы -->
@@ -53,13 +112,11 @@
                 document.getElementById("registrationForm").style.display = "block";
             }
             </script>
-          
-        </article>
     </main>
 <!-- Подвал сайта -->
-    <footer>
-        <p> Матрешка     ©2024 Политика конфиденциальности.</p>
-    </footer>
+<footer>
+    <p> Матрешка | ©2024 Политика конфиденциальности.</p>
+</footer>
 
 </body>
 </html>

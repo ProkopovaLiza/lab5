@@ -7,6 +7,7 @@
     <meta name="description" content="Сайт создан для обучения иноязычных людей русскому языку.">
     <title>Матрёшка</title>
     <link rel="icon" type="images/png" href="images/Group.png">
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 
@@ -15,7 +16,6 @@
         <div class="logo">
             <img src="images/logo.svg" alt="Логотип">
         </div>
-        <h1>Матрёшка</h1>
         <!-- Навигационное меню -->
         <nav>
             <ul>
@@ -29,25 +29,27 @@
 
     <!-- Основной контент -->
     <main>
-        <article>
+    <div class="content-forum">
+        <div class="otziv">
             <!-- Раздел для общих обсуждений -->
-            <p>Тут вы можете оставить свой отзыв, чтобы ваше мнение могли увидеть другие ученики или задайте интересующий вас вопрос и преподаватели ответят на него.</p>
+            <p>Тут вы можете оставить свой отзыв, чтобы ваше мнение могли увидеть другие ученики или задайте интересующий вас вопрос </br> и преподаватели ответят на него.</p>
             <h2>Обсуждения</h2>
             <p>Отзыв: </p>
             <!-- Форма для отправки отзыва -->
             <form>
                 <textarea name="feedback"></textarea><br>
-                <button type="button" onclick="alert('Спасибо за ваш отзыв!');">Отправить</button> 
+                <button style="background-color: #F8FB7E;" type="button" onclick="alert('Спасибо за ваш отзыв!');">Отправить</button> 
             </form>
-
+        </div>
+        <div class="question_prep">
             <p>Вопрос преподавателю: </p>
             <!-- Форма для отправки вопроса преподавателю -->
             <form>
                 <textarea name="question"></textarea><br>
-                <button type="button" onclick="alert('Вопрос отправлен преподавателю, вы получите ответ в близжайшее время');">Отправить</button> 
+                <button style="background-color: #F8FB7E;" type="button" onclick="alert('Вопрос отправлен преподавателю, вы получите ответ в близжайшее время');">Отправить</button> 
             </form>
-
-
+        </div>
+        <div class="question_lih">
             <!-- Раздел для личных вопросов -->
             <h2>Личный вопрос</h2>
             <p>Кому:</p>
@@ -55,18 +57,20 @@
                 <input type="text" name="recipient" hidden> <!-- Скрытый инпут с именем получателя -->
                 <input type="text" name="subject"><br>
             </form>
+        </div>
             <p>Тема вопроса:</p>
             <!-- Форма для отправки личного вопроса -->
             <form>
                 <textarea name="message"></textarea><br>
-                <button type="button" onclick="alert('Ваш вопрос отправлен, в близжайшее время вы получите ответ');">Отправить</button> 
+                <button style="background-color: #F8FB7E;" type="button" onclick="alert('Ваш вопрос отправлен, в близжайшее время вы получите ответ');">Отправить</button> 
             </form>
-        </article>
+        </div>
+    </div>
     </main>
 
     <!-- Подвал сайта -->
     <footer>
-        <p> Матрешка     ©2024 Политика конфиденциальности.</p>
+        <p> Матрешка | ©2024 Политика конфиденциальности.</p>
     </footer>
 
 </body>
