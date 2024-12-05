@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Калькулятор</title>
+
+    <script>
+        // Функция для получения числа от пользователя с обработкой ошибок
+        function getNumberInput(message) {
+            while (true) {
+                let input = prompt(message);
+                // Проверка на завершение работы
+                if (input === null || input.toLowerCase() === 'стоп') {
+                    alert("Работа завершена.");
+                    return null; // Завершение работы
+                }
+                let number = parseFloat(input);
+                // Проверка на корректность ввода
+                if (!isNaN(number)) {
+                    return number;
+                }
+                alert("Пожалуйста, введите корректное число.");
+            }
+        }
+
+        // Основная функция для выполнения операций
+        function startCalculator() {
+            while (true) {
+                // Меню выбора операции
+                let operation = prompt("Выберите операцию:\n" +
+                    "1. Максимум или минимум двух чисел\n" +
+                    "2. Сложение двух комплексных чисел\n" +
+                    "3. Деление двух чисел\n" +
+                    "4. Возведение в степень\n" +
+                    "5. Умножение двух чисел\n" +
+                    "6. Вычитание двух чисел\n" +
+                    "7. Вычитание двух дробей\n" +
+                    "8. Деление двух дробей\n" +
+                    "9. Корень n-степени от числа\n" +
+                    "10. Целая и дробная части от деления\n" +
+                    "11. Добавление дней к дате\n" +
+                    "12. Вычитание дней из даты\n" +
+                    "13. Синус угла\n" +
+                    "14. Факториал числа\n" +
+                    "Введите 'стоп' для завершения.");
+
+                // Проверка на завершение работы
+                if (operation === null || operation.toLowerCase() === 'стоп') {
+                    alert("Работа завершена.");
+                    break; // Завершение работы
+                }
+
+                // Переключатель для обработки каждой операции
+                switch (operation) {
+                    case '1':
+                        // Вариант 1: Максимум или минимум
+                        let num1 = getNumberInput("Введите первое число:");
+                        if (num1 === null) break; // Если пользователь завершил работу
+                        let num2 = getNumberInput("Введите второе число:");
+                        if (num2 === null) break; // Если пользователь завершил работу
+                        let maxMin = Math.max(num1, num2) + " (максимум) / " + Math.min(num1, num2) + " (минимум)";
+                        alert("Результат: " + maxMin);
+                        break;
+
+                    case '2':
+                        // Вариант 2: Сложение комплексных чисел
+                        let real1 = getNumberInput("Введите действительную часть первого комплексного числа:");
+                        if (real1 === null) break;
+                        let imag1 = getNumberInput("Введите мнимую часть первого комплексного числа:");
+                        if (imag1 === null) break;
+                        let real2 = getNumberInput("Введите действительную часть второго комплексного числа:");
+                        if (real2 === null) break;
+                        let imag2 = getNumberInput("Введите мнимую часть второго комплексного числа:");
+                        if (imag2 === null) break;
+                        let complexSum = (real1 + real2) + " + " + (imag1 + imag2) + "i";
+                        alert("Результат: " + complexSum);
+                        break;
+
+                    case '3':
+                        // Вариант 3: Деление двух чисел
+                        let dividend = getNumberInput("Введите делимое:");
+                        if (dividend === null) break;
+                        let divisor = getNumberInput("Введите делитель:");
+                        if (divisor === null) break;
+                        if (divisor === 0) {
+                            alert("Деление на ноль невозможно.");
+                        } else {
+                            let divisionResult = dividend / divisor;
+                            alert("Результат: " + divisionResult);
+                        }
+                        break;
+
+                    case '4':
+                        // Вариант 4: Возведение в степень
+                        let base = getNumberInput("Введите основание:");
+                        if (base === null) break;
+                        let exponent = getNumberInput("Введите показатель степени:");
+                        if (exponent === null) break;
+                        let powerResult = Math.pow(base, exponent);
+                        alert("Результат: " + powerResult);
+                        break;
+
+                    case '5':
+                        // Вариант 5: Умножение двух чисел
+                        let factor1 = getNumberInput("Введите первое число:");
+                        if (factor1 === null) break;
+                        let factor2 = getNumberInput("Введите второе число:");
+                        if (factor2 === null) break;
+                        alert("Результат: " + (factor1 * factor2));
+                        break;
+
+                    case '6':
+                        // Вариант 6: Вычитание двух чисел
+                        let minuend = getNumberInput("Введите уменьшаемое:");
+                        if (minuend === null) break;
+                        let subtrahend = getNumberInput("Введите вычитаемое:");
+                        if (subtrahend === null) break;
+                        alert("Результат: " + (minuend - subtrahend));
+                        break;
+
+                    case '7':
+                        // Вариант 7: Вычитание двух дробей
+                        let num1a = getNumberInput("Введите числитель первой дроби:");
+                        if (num1a === null) break;
+                        let denom1 = getNumberInput("Введите знаменатель первой дроби:");
+                        if (denom1 === null) break;
+                        let num2a = getNumberInput("Введите числитель второй дроби:");
+                        if (num2a === null) break;
+                        let denom2 = getNumberInput("Введите знаменатель второй дроби:");
+                        if (denom2 === null) break;
+                        let resultNum = num1a * denom2 - num2a * denom1;
+                        let resultDenom = denom1 * denom2;
+                        alert("Результат: " + resultNum + "/" + resultDenom);
+                        break;
+
+                    case '8':
+                        // Вариант 8: Деление двух дробей
+                        let num1b = getNumberInput("Введите числитель первой дроби:");
+                        if (num1b === null) break;
+                        let denom1b = getNumberInput("Введите знаменатель первой дроби:");
+                        if (denom1b === null) break;
+                        let num2b = getNumberInput("Введите числитель второй дроби:");
+                        if (num2b === null) break;
+                        let denom2b = getNumberInput("Введите знаменатель второй дроби:");
+                        if (denom2b === null) break;
+                        if (num2b === 0) {
+                            alert("Деление на ноль невозможно.");
+                        } else {
+                            let resultNumDiv = num1b * denom2b;
+                            let resultDenomDiv = denom1b * num2b;
+                            alert("Результат: " + resultNumDiv + "/" + resultDenomDiv);
+                        }
+                        break;
+                        
+                    case '9':
+                        // Вариант 9: Корень n-степени от числа
+                        let rootNumber = getNumberInput("Введите число:");
+                        if (rootNumber === null) break;
+                        let rootDegree = getNumberInput("Введите степень корня:");
+                        if (rootDegree === null) break;
+                        alert("Результат: " + Math.pow(rootNumber, 1 / rootDegree));
+                        break;
+
+                    case '10':
+                        // Вариант 10: Целая и дробная часть от деления
+                        let dividend2 = getNumberInput("Введите делимое:");
+                        if (dividend2 === null) break;
+                        let divisor2 = getNumberInput("Введите делитель:");
+                        if (divisor2 === null) break;
+                        if (divisor2 === 0) {
+                            alert("Деление на ноль невозможно.");
+                        } else {
+                            let divisionIntPart = Math.floor(dividend2 / divisor2);
+                            let divisionFractionalPart = dividend2 % divisor2;
+                            alert("Целая часть: " + divisionIntPart + ", Дробная часть: " + divisionFractionalPart);
+                        }
+                        break;
+
+                    case '11':
+                        // Вариант 11: Добавление дней к дате
+                        let daysToAdd = getNumberInput("Введите количество дней для добавления:");
+                        if (daysToAdd === null) break;
+                        let dateToAdd = prompt("Введите дату в формате ГГГГ-ММ-ДД:");
+                        try {
+                            let newDate = new Date(dateToAdd);
+                            newDate.setDate(newDate.getDate() + daysToAdd);
+                            alert("Новая дата: " + newDate.toISOString().split('T')[0]);
+                        } catch (error) {
+                            alert("Некорректный формат даты.");
+                        }
+                        break;
+
+                    case '12':
+                        // Вариант 12: Вычитание дней из даты
+                        let daysToSubtract = getNumberInput("Введите количество дней для вычитания:");
+                        if (daysToSubtract === null) break;
+                        let dateToSubtract = prompt("Введите дату в формате ГГГГ-ММ-ДД:");
+                        try {
+                            let newDate2 = new Date(dateToSubtract);
+                            newDate2.setDate(newDate2.getDate() - daysToSubtract);
+                            alert("Новая дата: " + newDate2.toISOString().split('T')[0]);
+                        } catch (error) {
+                            alert("Некорректный формат даты.");
+                        }
+                        break;
+
+                    case '13':
+                        // Вариант 13: Синус угла
+                        let angle = getNumberInput("Введите угол в градусах:");
+                        if (angle === null) break;
+                        let radians = angle * (Math.PI / 180);
+                        alert("Синус угла: " + Math.sin(radians));
+                        break;
+
+                    case '14':
+                        // Вариант 14: Факториал числа
+                        let factorialNumber = getNumberInput("Введите число для вычисления факториала:");
+                        if (factorialNumber === null) break;
+                        if (factorialNumber < 0) {
+                            alert("Факториал не определен для отрицательных чисел.");
+                        } else {
+                            let factorialResult = 1;
+                            for (let i = 1; i <= factorialNumber; i++) {
+                                factorialResult *= i;
+                            }
+                            alert("Факториал числа " + factorialNumber + " равен: " + factorialResult);
+                        }
+                        break;
+
+                    default:
+                        alert("Некорректный выбор операции. Пожалуйста, выберите снова.");
+                }
+            }
+        }
+
+        // Запуск калькулятора при загрузке страницы
+        window.onload = function() {
+            startCalculator();
+        };
+    </script>
+</head>
+
+</html>
