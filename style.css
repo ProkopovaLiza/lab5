@@ -63,12 +63,13 @@
 
 .osnova {
     display: flex; 
+    flex-direction: column;
     align-items: center; 
-    border: 6px solid #ACAAEF;
-    border-radius: 100px; 
-    padding: 20px;
-    width: 50%;
-    margin: 30px auto;
+    border: 5px solid #ACAAEF;
+    border-radius: 50px; 
+    padding: 30px;
+    width: 45%;
+    margin: 70px auto;  
     justify-content: space-between;
 }
 
@@ -99,6 +100,12 @@
     transition: all 0.3s ease; /* Добавляем плавный переход */
 }
 
+.button2 {
+    font-size: 32px; 
+    margin: 30px 30px 30px auto;
+    padding: 10px 10px;
+}
+
 .osnova button:hover {
   background-color: transparent; /* Прозрачный фон */
   border: 3px solid #F8FB7E; /* Желтая обводка */
@@ -113,6 +120,7 @@
 
 
 .osnova img {
+    display: block;
     width: 600px; 
     height: auto;
     margin-left: auto;
@@ -330,4 +338,767 @@ footer {
     text-align: center; 
     font-family: 'jura', sans-serif;
 }
+
+    /* добавляем "гамбургер" */
+    .menu__btn > span,
+    .menu__btn > span::before,
+    .menu__btn > span::after {
+        display: block;
+        position: absolute;
+        width: 20%;
+        height: 2px;
+        background-color: #616161;
+        transition: 0.3s;
+        z-index: 1000;
+    }
+
+        .menu__btn > span::before {
+            content: '';
+            top: -8px;
+        }
+
+        .menu__btn > span::after {
+            content: '';
+            top: 8px;
+        }
+
+/* контейнер меню */
+.menu__box {
+    display: block;
+    position: fixed;
+    visibility: hidden;
+    top: 0;
+    left: -100%;
+    width: 300px;
+    height: 100%;
+    margin: 0;
+    padding: 80px 0;
+    list-style: none;
+    text-align: center;
+    background-color: #ECEFF1;
+    box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+    transition: 0.3s;
+}
+
+
+
+
+/* элементы меню */
+.menu__item {
+    display: block;
+    padding: 12px 24px;
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+    .menu__item:hover {
+        background-color: #CFD8DC;
+    }
+
+    #menu__toggle {
+        visibility: hidden;
+    }
+
+#menu__toggle:checked ~ .menu__btn > span {
+    transform: rotate(45deg);
+}
+
+    #menu__toggle:checked ~ .menu__btn > span::before {
+        top: 0;
+        transform: rotate(0);
+    }
+
+    #menu__toggle:checked ~ .menu__btn > span::after {
+        top: 0;
+        transform: rotate(90deg);
+    }
+
+#menu__toggle:checked ~ .menu__box {
+    visibility: visible;
+    left: 0;
+}
+
+.navigate {
+  width: 80px;
+  position: absolute;
+  right: 10px;
+  left: 350px;
+  top: 60px;
+  height: 80px;
+}
+
+
+
+
+
+
+
+
+
+@media (max-width: 390px) {
+/* Шапка */   
+.header {
+    background-color: #e5bbbb;
+    padding: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'kablammo', sans-serif;
+}
+
+.header .logo {
+    margin-right: 95px;
+}
+
+.header .logo img {
+    width: 25px; 
+    height: auto;
+  }
   
+.header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+  
+.header nav li {
+    margin-right: 10px;
+}
+  
+.header nav a {
+    text-decoration: none;
+    color: #333;
+    font-size: 10px;
+}
+
+.header nav a:hover {
+    text-decoration: underline;
+}
+
+/* Курсы - основной контент*/
+article {
+border: 4px solid #ACFF8F;
+padding: 10px;
+margin-top: 20px;
+margin-bottom: 5px;
+gap: 10px;
+width: 200px;
+display: inline-block;
+}
+
+article h2 {
+text-align: center;
+margin-bottom: -5px;
+font-family: 'lobster', sans-serif;
+}
+
+article p {
+margin-bottom: 0px;
+color: rgba(0, 0, 0, 0.6);
+font-family: 'jura', sans-serif;
+}
+
+article input {
+width: 70%;
+border: none;
+border-bottom: 1px solid black;
+}
+
+article button {
+display: block;
+margin: 10px auto auto auto;
+padding: 2px 8px;
+background-color: #F8FB7E; 
+color: #000;
+border: none;
+cursor: pointer;
+font-family: 'jura', sans-serif;
+}
+
+.container-curs {
+text-align: center;
+display: flex;
+flex-direction: column;
+align-items: center; 
+justify-content: center; 
+gap: 5px;
+}
+
+.container-vopros {
+margin-bottom: 5px;
+margin-left: 3px;
+}
+.container-vopros h2 {
+font-family: 'jetbrains-mono', sans-serif;
+}
+
+.container-vopros p {
+margin-bottom: 5px;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+position: relative;
+font-family: 'jura', sans-serif;
+}
+
+.container-vopros p a {
+display: inline-block;
+padding: 3px 2px; 
+border: 3px solid #B7F0ED; 
+border-radius: 5px; 
+text-decoration: none;
+color: #333; 
+transition: background-color 0.3s ease;
+width: 85%;
+position: relative; 
+}
+
+.container-vopros p::before {
+content: "";
+position: absolute;
+top: 50%;
+right: 10%;
+transform: translateY(-50%);
+width: 20px;
+height: 20px;
+border-radius: 60%;
+border: 1px solid black; 
+background-color: white; 
+cursor: pointer; 
+transition: background-color 0.3s ease; 
+
+}
+
+.container-vopros p:hover::before {
+background-color: #E5BBBB; 
+}
+
+/* Форум - основной контент*/
+
+.content-forum {
+margin-top: 0px;
+margin-left: 0px;
+width: 380px;
+}
+.content-forum h2 {
+font-family: 'jetbrains-mono', sans-serif;
+}
+
+.content-forum p {
+font-family: 'jura', sans-serif;
+}
+
+/* Поддержка - основной контент*/
+
+.forma-vopros {
+margin-top: 0px;
+margin-left: 0px;
+width: 370px;
+}
+
+.forma-vopros h2{
+font-family: 'jetbrains-mono', sans-serif;
+}
+
+.forma-vopros p{
+font-family: 'jura', sans-serif;
+}
+
+textarea {
+width: 100%;
+height: 100px;
+padding: 5px;
+border: 1px solid #ccc;
+border-radius: 5px;
+resize: vertical;
+width: 80%;
+}
+
+button {
+display: block;
+margin: 13px auto 65px 0;
+padding: 10px 10px;
+background-color: #61FF29; 
+color: #000;
+border: none;
+cursor: pointer;
+font-family: 'jura', sans-serif;
+transition: all 0.3s ease; /* Добавляем плавный переход */
+}
+
+button:hover { 
+background-color: transparent;
+border: 3px solid black; 
+color: #000; 
+}
+
+
+/* О школе - основной контент*/
+
+.osnova {
+display: flex;
+flex-direction: column; 
+align-items: center; 
+border: 5px solid #ACAAEF;
+border-radius: 60px; 
+padding: 60px;
+width: 50%;
+margin: 30px auto;
+justify-content: space-between;
+}
+
+.text1 {
+display: flex; 
+flex-direction: column; 
+align-items: center;
+}
+
+.osnova h2 {
+font-family: 'jura', sans-serif;
+font-size: 20px;
+margin-bottom: 60px; 
+margin-left: 0px;
+text-align: center;
+}
+
+.osnova button {
+display: block;
+font-size: 20px; 
+padding: 5px 10px; 
+background-color: #F8FB7E; 
+color: #000;
+border: none;
+cursor: pointer;
+font-family: 'jura', sans-serif;
+text-align: center;
+transition: all 0.3s ease; /* Добавляем плавный переход */
+}
+
+.button2 {
+font-size: 20px; 
+margin: 120px 0px 30px auto;
+padding: 10px 10px;
+}
+.osnova button:hover {
+background-color: transparent; /* Прозрачный фон */
+border: 3px solid #F8FB7E; /* Желтая обводка */
+box-shadow: 0px 0px 10px rgba(248, 251, 126, 0.5); /* Тень */
+}
+
+.osnova button:active { /* Стиль при нажатии */
+background-color: #4CAF50; /* Зеленый цвет */
+border: none; /* Без обводки */
+box-shadow: none; /* Убираем тень */
+}
+
+
+.osnova img {
+display: none;
+width: 600px; 
+height: auto;
+margin-left: auto;
+z-index: -1;
+}
+
+/* Ответы на вопросы - основной контент*/
+
+.content-question {
+display: flex;
+flex-direction: column;
+align-items: center;
+margin: 3px;
+}
+
+.content-question figure {
+margin-bottom: 20px; 
+}
+
+.content-question img {
+max-width: 300px;
+height: auto;
+border-radius: 10px;
+}
+
+.content-question h2 {
+font-size: 2.5em;
+margin-bottom: 15px;
+text-align: center;
+font-family: 'jetbrains-mono', sans-serif;
+}
+
+.content-question p {
+line-height: 1.5;
+margin-bottom: 5px;
+font-family: 'jura', sans-serif;
+text-align: justify;
+}
+
+.content-question ol {
+text-align: left;
+margin-bottom: 20px;
+}
+
+.content-question li {
+margin-bottom: 10px;
+font-family: 'jura', sans-serif;
+}
+
+.content-question li strong {
+display: block; 
+margin-bottom: 5px; 
+font-size: 1.2em;
+font-weight: bold;
+} */
+
+/* Подвал сайта */
+
+footer {
+    background-color: #e5bbbb;
+    padding: 20px;
+    text-align: center; 
+    font-family: 'jura', sans-serif;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 1024px) and (min-width: 400px) {
+    /* Шапка */
+.header {
+    background-color: #e5bbbb;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'kablammo', sans-serif;
+}
+
+.header .logo {
+    margin-right: 180px;
+}
+
+.header .logo img {
+    width: 50px; 
+    height: auto;
+  }
+  
+.header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+  
+.header nav li {
+    margin-right: 100px;
+}
+  
+.header nav a {
+    text-decoration: none;
+    color: #333;
+    font-size: 20px;
+}
+
+.header nav a:hover {
+    text-decoration: underline;
+}
+
+/* О школе - основной контент*/
+
+.osnova {
+    display: flex; 
+    flex-direction: row;
+    align-items: center; 
+    border: 5px solid #ACAAEF;
+    border-radius: 50px; 
+    padding: 25px;
+    width: 80%;
+    margin: 250px auto;  
+    justify-content: space-between;
+}
+
+.text1 {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+}
+
+.osnova h2 {
+    font-family: 'jura', sans-serif;
+    font-size: 35px;
+    margin-bottom: 50px; 
+    margin-left: 50px;
+    text-align: center;
+}
+
+.osnova button {
+    display: block; 
+    margin-top: 10px; 
+    padding: 10px 50px; 
+    background-color: #F8FB7E; 
+    color: #000;
+    border: none;
+    cursor: pointer;
+    font-family: 'jura', sans-serif;
+    text-align: center;
+    transition: all 0.3s ease; /* Добавляем плавный переход */
+}
+
+.button2 {
+    font-size: 32px; 
+    margin: 400px 0px 50px auto;
+    padding: 10px 10px;
+}
+
+.osnova button:hover {
+  background-color: transparent; /* Прозрачный фон */
+  border: 3px solid #F8FB7E; /* Желтая обводка */
+  box-shadow: 0px 0px 10px rgba(248, 251, 126, 0.5); /* Тень */
+}
+
+.osnova button:active { /* Стиль при нажатии */
+  background-color: #4CAF50; /* Зеленый цвет */
+  border: none; /* Без обводки */
+  box-shadow: none; /* Убираем тень */
+}
+
+
+.osnova img {
+    display: block;
+    width: 400px; 
+    height: auto;
+    margin-left: auto;
+    z-index: -1;
+}
+
+
+/* Курсы - основной контент*/
+article {
+    border: 6px solid #ACFF8F;
+    padding: 20px;
+    margin-top: 110px;
+    margin-bottom: 110px;
+    gap: 50px;
+    width: 300px;
+    display: inline-block;
+}
+  
+article h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-family: 'lobster', sans-serif;
+}
+  
+article p {
+    margin-bottom: 0px;
+    color: rgba(0, 0, 0, 0.6);
+    font-family: 'jura', sans-serif;
+}
+  
+article input {
+    width: 80%;
+    border: none;
+    border-bottom: 1px solid black;
+}
+  
+article button {
+    display: block;
+    margin: 50px auto auto auto;
+    padding: 10px 30px;
+    background-color: #F8FB7E; 
+    color: #000;
+    border: none;
+    cursor: pointer;
+    font-family: 'jura', sans-serif;
+}
+
+.container-curs {
+    text-align: center;
+    display: flex;
+    flex-direction: row; 
+    padding: 0px 40px;
+    justify-content: center; 
+    gap: 120px;
+}
+
+.container-vopros {
+    margin-bottom: 160px;
+    margin-left: 300px;
+}
+.container-vopros h2 {
+    font-family: 'jetbrains-mono', sans-serif;
+}
+   
+.container-vopros p {
+    margin-bottom: 20px;
+    position: relative;
+    font-family: 'jura', sans-serif;
+}
+   
+.container-vopros p a {
+    display: inline-block;
+    padding: 10px 20px; 
+    border: 3px solid #B7F0ED; 
+    border-radius: 10px; 
+    text-decoration: none;
+    color: #333; 
+    transition: background-color 0.3s ease;
+    width: 34%;
+    position: relative; 
+}
+
+.container-vopros p::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 61%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid black; 
+    background-color: white; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease; 
+    
+}
+
+.container-vopros p:hover::before {
+    background-color: #E5BBBB; 
+}
+
+/* Форум - основной контент*/
+
+.content-forum {
+    margin-top: 70px;
+    margin-left: 30px;
+    width: 800px;
+}
+.content-forum h2 {
+    font-family: 'jetbrains-mono', sans-serif;
+}
+
+.content-forum p {
+    font-family: 'jura', sans-serif;
+}
+
+/* Поддержка - основной контент*/
+
+.forma-vopros {
+    margin-top: 70px;
+    margin-left: 30px;   
+    width: 800px;
+}
+
+.forma-vopros h2{
+    font-family: 'jetbrains-mono', sans-serif;
+}
+
+.forma-vopros p{
+    font-family: 'jura', sans-serif;
+}
+
+textarea {
+    width: 100%;
+    height: 70px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical;
+    width: 100%;
+}
+
+button {
+    display: block;
+    margin: 40px auto 75px 0;
+    padding: 10px 50px;
+    background-color: #61FF29; 
+    color: #000;
+    border: none;
+    cursor: pointer;
+    font-family: 'jura', sans-serif;
+    transition: all 0.3s ease; /* Добавляем плавный переход */
+}
+
+button:hover { 
+    background-color: transparent;
+    border: 3px solid black; 
+    color: #000; 
+  }
+
+/* Ответы на вопросы - основной контент*/
+
+.content-question {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px;
+}
+
+.content-question figure {
+    margin-bottom: 20px; 
+}
+
+.content-question img {
+    max-width: 600px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.content-question h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: 'jetbrains-mono', sans-serif;
+}
+
+.content-question p {
+    line-height: 1.5;
+    margin-bottom: 40px;
+    font-family: 'jura', sans-serif;
+    text-align: justify;
+}
+
+.content-question ol {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.content-question li {
+    margin-bottom: 10px;
+    font-family: 'jura', sans-serif;
+}
+
+.content-question li strong {
+    display: block; 
+    margin-bottom: 5px; 
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+/* Подвал сайта */
+
+footer {
+    background-color: #e5bbbb;
+    padding: 20px;
+    text-align: center; 
+    font-family: 'jura', sans-serif;
+}
+
+
+
+}

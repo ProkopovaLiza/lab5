@@ -17,7 +17,7 @@
             <img src="images/logo.svg" alt="Логотип">
         </div>
         <!-- Навигационное меню -->
-        <nav>
+        <nav class="menu">
             <ul>
                 <li><a href="index.html">О школе </a></li>
                 <li><a href="curs.html">Курсы</a></li>
@@ -26,6 +26,24 @@
             </ul>
         </nav>
     </header>
+
+    <nav class="navigate">
+        <!--   элемент, по которому юзер будет кликать  -->
+        <input id="menu__toggle" type="checkbox" />
+        <label class="menu__btn" for="menu__toggle">
+            <span></span>
+        </label>
+
+    <!--   /* наше меню */ -->
+    <ul class="menu__box">
+        <li><a href="index.html">О школе </a></li>
+        <li><a href="curs.html">Курсы</a></li>
+        <li><a href="forum.html">Форум</a></li>
+        <li><a href="help.html">Поддержка</a></li>
+    </ul>
+    </nav>
+
+
 <!-- Основной контент -->
     <main>
         <!-- Раздел для общих обсуждений -->
