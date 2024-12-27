@@ -8,6 +8,7 @@
     <title>Матрёшка</title>
     <link rel="icon" type="images/png" href="images/Group.png">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> 
 </head>
 <body>
 
@@ -27,47 +28,54 @@
         </nav>
     </header>
 
-   
-
     <!-- Основной контент -->
-    <main>
-    <div class="content-forum">
-        <div class="otziv">
-            <!-- Раздел для общих обсуждений -->
-            <p>Тут вы можете оставить свой отзыв, чтобы ваше мнение могли увидеть другие ученики или задайте интересующий вас вопрос </br> и преподаватели ответят на него.</p>
-            <h2>Обсуждения</h2>
-            <p>Отзыв: </p>
-            <!-- Форма для отправки отзыва -->
-            <form>
-                <textarea name="feedback"></textarea><br>
-                <button style="background-color: #F8FB7E;" type="button" onclick="alert('Спасибо за ваш отзыв!');">Отправить</button> 
-            </form>
+    <main class="container mt-4"> <!--Обернули контент в <div class="container mt-4">, чтобы создать отступы и центровку содержимого.-->
+        <div class="content-forum">
+            <div class="otziv mb-4"> <!--Добавлены mb-4 к блокам с отзывами и вопросами, чтобы создать пространство между ними и сделать контент более щадящим для восприятия.-->
+                <p>Тут вы можете оставить свой отзыв, чтобы ваше мнение могли увидеть другие ученики или задайте интересующий вас вопрос,<br> и преподаватели ответят на него.</p>
+                <h2>Обсуждения</h2>
+                <p>Отзыв: </p>
+                <!-- Форма для отправки отзыва -->
+                <form>
+                    <div class="form-group"> <!--Использованы классы form-group и form-control для создания аккуратного оформления полей ввода и текстовых областей.
+                        - rows добавлены к тегам <textarea>, чтобы указать количество видимых строк.-->
+                        <textarea class="form-control" name="feedback" rows="5" placeholder="Ваш отзыв..."></textarea> <!--Добавлены атрибуты placeholder в полях ввода и текстовых областях. Это помогает пользователю быстрее понять, что нужно ввести.-->
+                    </div>
+                    <button class="btn btn-warning" type="button" onclick="alert('Спасибо за ваш отзыв!');">Отправить</button> <!--Использованы классы btn и btn-warning для кнопок, что делает их более визуально привлекательными и согласованными с стилями Bootstrap.-->
+                </form>
+            </div>
+    
+            <div class="question_prep mb-4"> <!--Добавлены mb-4 к блокам с отзывами и вопросами, чтобы создать пространство между ними и сделать контент более щадящим для восприятия.-->
+                <p>Вопрос преподавателю: </p>
+                <!-- Форма для отправки вопроса преподавателю -->
+                <form>
+                    <div class="form-group">
+                        <textarea class="form-control" name="question" rows="5" placeholder="Ваш вопрос..."></textarea>
+                    </div>
+                    <button class="btn btn-warning" type="button" onclick="alert('Вопрос отправлен преподавателю, вы получите ответ в близжайшее время');">Отправить</button> 
+                </form>
+            </div>
+    
+            <div class="question_lih">
+                <!-- Раздел для личных вопросов -->
+                <h2>Личный вопрос</h2>
+                <p>Кому:</p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" name="recipient" class="form-control" hidden> <!-- Скрытый инпут с именем получателя -->
+                        <input type="text" name="subject" class="form-control" placeholder="Тема вопроса..."><br>
+                    </div>
+                </form>
+                <p>Тема вопроса:</p>
+                <!-- Форма для отправки личного вопроса -->
+                <form>
+                    <div class="form-group">
+                        <textarea class="form-control" name="message" rows="5" placeholder="Ваш вопрос..."></textarea>
+                    </div>
+                    <button class="btn btn-warning" type="button" onclick="alert('Ваш вопрос отправлен, в близжайшее время вы получите ответ');">Отправить</button> 
+                </form>
+            </div>
         </div>
-        <div class="question_prep">
-            <p>Вопрос преподавателю: </p>
-            <!-- Форма для отправки вопроса преподавателю -->
-            <form>
-                <textarea name="question"></textarea><br>
-                <button style="background-color: #F8FB7E;" type="button" onclick="alert('Вопрос отправлен преподавателю, вы получите ответ в близжайшее время');">Отправить</button> 
-            </form>
-        </div>
-        <div class="question_lih">
-            <!-- Раздел для личных вопросов -->
-            <h2>Личный вопрос</h2>
-            <p>Кому:</p>
-            <form>
-                <input type="text" name="recipient" hidden> <!-- Скрытый инпут с именем получателя -->
-                <input type="text" name="subject"><br>
-            </form>
-        </div>
-            <p>Тема вопроса:</p>
-            <!-- Форма для отправки личного вопроса -->
-            <form>
-                <textarea name="message"></textarea><br>
-                <button style="background-color: #F8FB7E;" type="button" onclick="alert('Ваш вопрос отправлен, в близжайшее время вы получите ответ');">Отправить</button> 
-            </form>
-        </div>
-    </div>
     </main>
 
     <!-- Подвал сайта -->

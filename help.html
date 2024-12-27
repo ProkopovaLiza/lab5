@@ -8,6 +8,7 @@
     <title>Матрёшка</title>
     <link rel="icon" type="image/png" href="images/Group.png">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
 
@@ -17,7 +18,7 @@
             <img src="images/logo.svg" alt="Логотип">
         </div>
         <!-- Навигационное меню -->
-        <nav class="menu">
+        <nav>
             <ul>
                 <li><a href="index.html">О школе </a></li>
                 <li><a href="curs.html">Курсы</a></li>
@@ -26,46 +27,33 @@
             </ul>
         </nav>
     </header>
-
-    <nav class="navigate">
-        <!--   элемент, по которому юзер будет кликать  -->
-        <input id="menu__toggle" type="checkbox" />
-        <label class="menu__btn" for="menu__toggle">
-            <span></span>
-        </label>
-
-    <!--   /* наше меню */ -->
-    <ul class="menu__box">
-        <li><a href="index.html">О школе </a></li>
-        <li><a href="curs.html">Курсы</a></li>
-        <li><a href="forum.html">Форум</a></li>
-        <li><a href="help.html">Поддержка</a></li>
-    </ul>
-    </nav>
-
-
 <!-- Основной контент -->
-    <main>
-        <!-- Раздел для общих обсуждений -->
-        <div class="forma-vopros">
+<main class="container mt-4"> <!--Обернули весь основной контент в <main class="container mt-4">, чтобы использовать стандартные отступы Bootstrap и выровнять контент по центру.-->
+    <!-- Раздел для общих обсуждений -->
+    <div class="forma-vopros mb-4"> <!--Добавлен класс mb-4 к секции формы вопросов для создания промежутков между разделами.-->
         <p>Тут вы можете оставить свой вопрос, мы ответим на него как можно скорее.</p>
         <h2>Задать вопрос</h2>
         <!-- Форма для отправки отзыва -->
         <form>
-            <textarea name="feedback"></textarea>
-            <button type="button" onclick="alert('Мы получили ваш вопрос, ответ поступит в скором времени!');">Отправить</button> 
-        </form>
+            <div class="form-group"> <!--Использованный класс form-group для обертки текстовой области, чтобы выглядеть гармонично.-->
+                <textarea class="form-control" name="feedback" rows="5" placeholder="Ваш вопрос..."></textarea> <!--Класс form-control применен к <textarea>, чтобы сделать его стилизованным и реагирующим на размер экрана.-->
+            </div>
+            <button class="btn btn-primary" type="button" onclick="alert('Мы получили ваш вопрос, ответ поступит в скором времени!');">Отправить</button> 
+        </form> <!--Кнопка теперь использует классы btn btn-primary для улучшенного внешнего вида.-->
+    </div>
+
+    <!-- Раздел с часто задаваемыми вопросами -->
+    <div class="container-vopros">
+        <h2>Часто задаваемые вопросы</h2>
+        <div class="list-group"> <!--Вместо простых <p> используем <div class="list-group"> и <a class="list-group-item list-group-item-action">, чтобы создать красивый и стильный список, который также будет интерактивным.-->
+            <a href="question1.html" class="list-group-item list-group-item-action">Как понять, подходит ли мне формат обучения?</a>
+            <a href="question2.html" class="list-group-item list-group-item-action">А на занятиях не будет скучно?</a>
+            <a href="question3.html" class="list-group-item list-group-item-action">Сколько еще учеников будет на занятии?</a>
+            <a href="question4.html" class="list-group-item list-group-item-action">Можно ли учится с телефона или планшета?</a>
+            <a href="question5.html" class="list-group-item list-group-item-action">Как я буду понимать что занятия приносят пользу?</a>
         </div>
-        <!-- Раздел с часто задаваемыми вопросами -->
-        <div class="container-vopros">
-            <h2>Часто задаваемые вопросы</h2>
-            <p><a href="question1.html">Как понять, подходит ли мне формат обучения?</a></p>
-            <p><a href="question2.html">А на занятиях не будет скучно?</a></p>
-            <p><a href="question3.html">Сколько еще учеников будет на занятии?</a></p>
-            <p><a href="question4.html">Можно ли учится с телефона или планшета?</a></p>
-            <p><a href="question5.html">Как я буду понимать что занятия приносят пользу?</a></p>
-        </div>
-    </main>
+    </div>
+</main>
 <!-- Подвал сайта -->
 <footer>
     <p> Матрешка | ©2024 Политика конфиденциальности.</p>

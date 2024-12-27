@@ -7,6 +7,7 @@
     <meta name="description" content="Сайт создан для обучения иноязычных людей русскому языку.">
     <title>Матрёшка</title>
     <link rel="icon" type="images/png" href="images/Group.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
@@ -29,53 +30,84 @@
         </nav>
     </header>
 
-    
-
     <!-- Основной контент -->
-    <main>
-        <div class="container-curs">
-            <article>
-              <h2>Новичок</h2>
-              <p>Имя:</p>
-              <input type="text"> <br>
-              <p>Номер телефона:</p>
-              <input type="tel"> <br>
-              <button type="button" onclick="alert('Вы записаны на консультацию, вся подробная информация будет отправлена на номер телефона');">Записаться на консультацию</button>
-            </article>
-        
-            <article>
-              <h2>Средний</h2>
-              <p>Имя:</p>
-              <input type="text"> <br>
-              <p>Номер телефона:</p>
-              <input type="tel"> <br>
-              <button type="button" onclick="alert('Вы записаны на консультацию, вся подробная информация будет отправлена на номер телефона');">Записаться на консультацию</button>
-            </article>
-        
-            <article>
-              <h2>Профи</h2>
-              <p>Имя:</p>
-              <input type="text"> <br>
-              <p>Номер телефона:</p>
-              <input type="tel"> <br>
-              <button type="button" onclick="alert('Вы записаны на консультацию, вся подробная информация будет отправлена на номер телефона');">Записаться на консультацию</button>
-            </article>
+    <main class="container mt-4"> <!--Создана сетка с использованием классов Bootstrap (row и col-md-4), чтобы расположение статей было адаптивным. Это позволяет карточкам занимать равное пространство и при необходимости адаптироваться под меньшие экраны.-->
+        <div class="row">
+            <div class="col-md-4">
+                <article class="card"> <!-- Использованы классы card для оформления каждого элемента курса. Это придает элементам аккуратный внешний вид с отступами и тенями.-->
+                    <div class="card-body">
+                        <h5 class="card-title">Новичок</h5>
+                        <form>
+                            <div class="form-group">
+                                <label>Имя:</label>
+                                <input type="text" class="form-control"> <!--Классы form-control добавлены к элементам входа, чтобы они смотрелись согласованно и были более удобными.-->
+                            </div>
+                            <div class="form-group">
+                                <label>Номер телефона:</label>
+                                <input type="tel" class="form-control"> <!--Класс form-control используется для стилизации полей ввода, чтобы они выглядели аккуратно.-->
+                            </div>
+                            <button type="button" class="btn btn-primary" onclick="alert('Вы записаны на консультацию, вся подробная информация будет отправлена на номер телефона');">Записаться на консультацию</button>
+                        </form> <!--Кнопки использования класса btn с btn-primary, чтобы они имели стиль Bootstrap.-->
+                    </div>
+                </article>
+            </div>
+
+            <div class="col-md-4">
+                <article class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Средний</h5>
+                        <form>
+                            <div class="form-group">
+                                <label>Имя:</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>Номер телефона:</label>
+                                <input type="tel" class="form-control">
+                            </div>
+                            <button type="button" class="btn btn-primary" onclick="alert('Вы записаны на консультацию, вся подробная информация будет отправлена на номер телефона');">Записаться на консультацию</button>
+                        </form>
+                    </div>
+                </article>
+            </div>
+
+            <div class="col-md-4">
+                <article class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Профи</h5>
+                        <form>
+                            <div class="form-group">
+                                <label>Имя:</label>
+                                <input type="text" class="form-control">
+                            </div><div class="form-group">
+                                <label>Номер телефона:</label>
+                                <input type="tel" class="form-control">
+                            </div>
+                            <button type="button" class="btn btn-primary" onclick="alert('Вы записаны на консультацию, вся подробная информация будет отправлена на номер телефона');">Записаться на консультацию</button>
+                        </form>
+                    </div>
+                </article>
+            </div>
         </div>
 
-        <div class="container-vopros">
+        <div class="mt-4">
             <h2>Часто задаваемые вопросы?</h2>
-            <p><a href="question1.html">Как понять, подходит ли мне формат обучения?</a></p>
-            <p><a href="question2.html">А на занятиях не будет скучно?</a></p>
-            <p><a href="question3.html">Сколько еще учеников будет на занятии?</a></p>
-            <p><a href="question4.html">Можно ли учится с телефона или планшета?</a></p>
-            <p><a href="question5.html">Как я буду понимать что занятия приносят пользу?</a></p>
+            <ul class="list-unstyled">
+                <li><a href="question1.html">Как понять, подходит ли мне формат обучения?</a></li>
+                <li><a href="question2.html">А на занятиях не будет скучно?</a></li>
+                <li><a href="question3.html">Сколько еще учеников будет на занятии?</a></li>
+                <li><a href="question4.html">Можно ли учится с телефона или планшета?</a></li>
+                <li><a href="question5.html">Как я буду понимать что занятия приносят пользу?</a></li>
+            </ul>
         </div>
-
     </main>
+
     <!-- Подвал сайта -->
     <footer>
         <p> Матрешка | ©2024 Политика конфиденциальности.</p>
     </footer>
-
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> <!--Эти скрипты подключают jQuery, Popper.js и JavaScript-файл Bootstrap, которые нужны для полного функционирования некоторых компонентов Bootstrap, например, выпадающего меню.-->
 </body>
-</html>
+</html> 
